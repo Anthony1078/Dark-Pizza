@@ -1,0 +1,22 @@
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}}</div>
+      <div class="alert alert-success" *ngIf='loginSuccess'>{{successMessage}}</div>
+
+      <h3 class="mb-4 mt-3">INICIO DE SESIÓN</h3>
+      <img src="https://i.ibb.co/gMN875m/fondo-blanco-editado-mejorado.jpg" alt="fondo-blanco-editado-mejorado" border="0" />
+
+      <form>
+        <div class="form-floating mb-3">
+          <input type="text" id="username" class="form-control" [(ngModel)]="username" name="username" placeholder="Usuario" style="width: 98%;">
+          <label for="floatingInput">Usuario</label>
+        </div>
+        <div class="form-floating">
+          <input type="password" id="password" class="form-control" [(ngModel)]="password" name="password" placeholder="Contraseña" style="width: 98%;">
+          <label for="floatingPassword">Contraseña</label>
+        </div>
+        <input type="submit" (click)=handleLogin() class="fadeIn fourth" value="Iniciar Sesión">
+      </form>
+
+    </div>
+  </div>

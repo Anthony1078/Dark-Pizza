@@ -1,0 +1,49 @@
+
+<div class="container">
+  <div class="col-lg-10 offset-lg-1" >
+    <br>
+    <div >
+        <div>
+            <div class="card" >
+                <div class="card-header row mb-3">
+                    <div class="col-lg-11 col-md-10  col-sm-9 col-xs-8 text-center">
+                        <h2 class="text-primary"> Mantenimiento de Productos <i class="bi bi-wrench-adjustable-circle-fill"></i></h2>
+                    </div>
+                    <div class="col-lg-1 col-md-2 col-sm-3 col-xs-4">
+                        <a href="/agregar" class="btn btn-success"><i class="bi bi-bookmark-plus"></i></a>
+                    </div>
+                </div>
+
+                <div class="card-body table-responsive" cellspacing="2" cellpadding="2" >
+                    <table class="table table-secondary">
+                        <thead>
+                            <tr>
+                                <th class="text-center">Código</th>
+                                <th class="text-center">Nombre</th>
+                                <th class="text-center">Descripción</th>
+                                <th class="text-center">Precio</th>
+                                <th class="text-center" width="20%" >Imagen</th>
+                                <th class="text-center">Editar</th>
+                                <th class="text-center">Eliminar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let producto of productos" class="text-center">
+                            <td class="text-center">{{producto.id}}</td>
+                            <td class="text-center">{{producto.nombre}}</td>
+                            <td class="text-center">{{producto.descripcion}}</td>
+                            <td class="text-center">{{producto.precio}}</td>
+                            <td class="text-center">
+                              <img width="100" alt="" src="{{producto.imagen}}">
+                            </td>
+                            <td class="text-center" (click)="Editar(producto)"><a class="btn btn-warning" ><i class="bi bi-pencil"></i></a></td>
+                            <td class="text-center" (click)="Delete(producto)"><a class="btn btn-danger" id="btn-eliminar"><i class="bi bi-trash"></i></a></td>
+                          </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
