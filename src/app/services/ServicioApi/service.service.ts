@@ -9,7 +9,7 @@ export class ServiceService {
 
   constructor(private http:HttpClient) { }
 
-  Url='https://serviciodarkpizza-production.up.railway.app/producto/api/v1';
+  Url='http://localhost:8080/producto/api/v1';
 
   getProductos(){
     return this.http.get<Producto[]>(this.Url+"/all");
@@ -26,6 +26,6 @@ export class ServiceService {
     return this.http.put<Producto>(this.Url+"/update/"+producto.id,producto);
   }
   deleteProducto(producto:Producto){
-    return this.http.get<String>(this.Url+"delete/"+producto.id);
+    return this.http.get<String>(this.Url+"/delete/"+producto.id);
   }
 }
